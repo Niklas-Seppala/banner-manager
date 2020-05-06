@@ -31,6 +31,10 @@ def register_components(app):
     from . import db
     db.init_app(app)
 
+    from . import banners
+
+    app.register_blueprint(banners.bp)
+
 
 def create_app_folders(app):
     try:
