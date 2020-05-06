@@ -1,0 +1,9 @@
+@font-face {
+    font-family: CaslonAntique;
+    src: url(/static/fonts/CaslonAntique.ttf);
+  }
+
+@font-face {
+    font-family: DOMINICA;
+    src: url(/static/fonts/DOMINICA.ttf);
+}
