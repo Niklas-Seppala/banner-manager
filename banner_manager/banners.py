@@ -7,3 +7,8 @@ from banner_manager.db import get_db
 from werkzeug.utils import secure_filename
 
 bp = Blueprint('banners', __name__)
+
+
+@bp.route('/img/<path:filename>')
+def download_file(filename):
+    return send_from_directory(current_app.config['UPLOAD_FOLDER'], filename, as_attachment=True)
