@@ -18,6 +18,7 @@ docs/_build/
 /venv
 .vscode
 __pycache__/
+instance/
 
 # Coverage reports
 htmlcov/
