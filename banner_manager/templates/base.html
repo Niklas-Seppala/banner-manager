@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% block json %} {% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='banner_manager.js') }}"></script>
+</head>
+
+<body>
+    <div class="block" id="header_bar">
+        <h1>Mount&Blade Banner Manager</h1>
+    </div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="block" id="message-flashes">
+        {% for category, message in messages %}
+        <div class="message-flash {{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+</body>
+
+</html>
