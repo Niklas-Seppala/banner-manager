@@ -26,7 +26,14 @@ $(document).ready(async function () {
     BANNERS = await getBannersAsync();
     createBannerList();
     setClipboardButton();
+    setDefaultBanner();
 });
+
+function setDefaultBanner() {
+    if (BANNERS) {
+        changeBanner(BANNERS[0].id);
+    }
+}
 
 function changeBanner(id) {
     let banner;
@@ -40,10 +47,10 @@ function changeBanner(id) {
     console.log(banner);
     document.getElementById('display-banner-name').textContent = banner.name;
     document.getElementById('display-banner-code').children[0].textContent = banner.code;
-    document.getElementById('display-banner-image').src = "/uploads/" + banner.image;
+    document.getElementById('display-banner-image').src = "/img/" + banner.image;
 
     let headerBlock = document.getElementById('display-banner-header');
-    headerBlock.children[0].src = '/static/factions/' + banner.faction + '.jpg';
+    headerBlock.children[0].src = '/static/faction_images/' + banner.faction + '.jpg';
 }
 
 function createBannerList() {
@@ -59,7 +66,7 @@ function createBannerList() {
         name.appendChild(document.createTextNode(banner.name))
         let thumbnail = document.createElement('img');
         thumbnail.className = 'faction-thumbnail'
-        thumbnail.src = '/static/factions/' + banner.faction + '.jpg';
+        thumbnail.src = '/static/faction_images/' + banner.faction + '.jpg';
         btn.appendChild(thumbnail);
         $(btn).append(name);
         $(btn).click(function (e) {
