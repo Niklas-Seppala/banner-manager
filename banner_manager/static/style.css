@@ -10,16 +10,28 @@
 
 html {
   height: 100vh;
+  font-family: DOMINICA;
 }
 
-html, button {
+h1, button {
   font-family: CaslonAntique;
+}
+
+.content-block {
+  margin: 0.5em;
+  height: 100%;
+}
+
+.content-header {
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 button {
   font-family: DOMINICA;
 }
-
 
 body {
   margin: 0;
@@ -59,15 +71,12 @@ textarea {
   height: 500px;
 }
 
-
-
 .form-section {
   padding: 0.5em;
   display: flex;
   flex-direction: column;
   background-color: rgb(226, 226, 226);
 }
-
 
 .success {
   background-color: rgba(162, 245, 94, 0.322);
@@ -102,13 +111,7 @@ textarea:focus {
   display: flex;
 }
 
-#display-banner-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-
+.content-block-content { height: 90%; }
 .block { margin: 0.4em; }
 .block-hor {
   display: flex;
@@ -125,7 +128,7 @@ li {
 }
 
 #header-img {
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 textarea.code-area {
@@ -187,10 +190,6 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-
-form h2 {
-  margin: 0.6em;
 }
 
 form label {
