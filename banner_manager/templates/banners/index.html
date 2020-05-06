@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block json %}
+<script src="{{ url_for('banners.banners') }}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div id="content">
+
+  <div class="block" id="banner-list">
+    <ul class="list"></ul>
+  </div>
+
+  <div class="block" id="banner-info">
+
+    <div class="block block-hor" id="display-banner-header">
+      <img id="header-img" src="{{ url_for('static', filename='faction_images/None.jpg') }}">
+      <h2 id="display-banner-name">Name here</h2>
+    </div>
+
+    <div class="block">
+      <img class="banner-image" id="display-banner-image" src="">
+    </div>
+
+    <div class="block block-hor" id="display-banner-code">
+      <textarea class="code-area">Code here</textarea>
+      <button id=copy-btn>Copy Code</button>
+    </div>
+
+  </div>
+
+  <div class="block" id="new-banner-form">
+    <form action="/add_banner" method="post" enctype="multipart/form-data">
+
+      <h2>Add new Banner</h2>
+
+      <div class="block">
+        <label for="banner-name">Banner Name</label>
+        <input type="text" name="banner-name">
+      </div>
+
+      <div class="block">
+        <label for="banner-code">Banner Code</label>
+
+        <input type="text" name="banner-code">
+      </div>
+
+      <div class="block">
+        <label for="banner-faction">Faction</label>
+        <select name="banner-faction">
+          <option value="None">None</option>
+          <option value="Vlandia">Vlandia</option>
+          <option value="Battania">Battania</option>
+          <option value="Sturgia">Sturgia</option>
+          <option value="Aserai">Aserai</option>
+          <option value="Empire">Empire</option>
+          <option value="Khuzait">Khuzait</option>
+        </select>
+      </div>
+
+      <div class="block">
+        <label for="file-url">Image Url</label>
+        <input type="text" name="file-url">
+      </div>
+
+      <div class="block" id="submit-form">
+        <input type="submit" value="Send">
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
