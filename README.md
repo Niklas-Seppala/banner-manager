@@ -9,7 +9,12 @@ A simple tool for storing custom banners in Mount&Blade Bannerlord.
 
 ```bash
 $ python3 -m venv /path/to/new/virtual/environment
-$ ./venv/Scripts/activate
+
+# Windows
+> ./venv/Scripts/activate
+
+#Linux
+$ source ./venv/bin/activate
 ```
 
 #### Install dependencies
@@ -28,9 +33,12 @@ $ export FLASK_ENV=development
 > $env:FLASK_ENV="development"
 > $env:FLASK_APP="banner_manager"
 ```
+#### Initialize database (first time)
+```bash
+flask init-db
+```
 
 #### Run
 ```bash
 $ flask run
 ```
-
