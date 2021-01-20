@@ -1,0 +1,45 @@
+.selected-banner-item {
+  width: 50%;
+}
+
+.banner-faction-img {
+  height: 45px;
+  margin-right: 1em;
+}
+
+img.selected-banner {
+  width: 90%;
+  height: 70%;
+  object-fit: scale-down;
+  background:rgb(234, 229, 223);
+}
+
+div.selected-banner-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.banner-code {
+  width: 90%;
+  display: flex;
+}
+
+button.copy-code {
+  width: 40%;
+  font-size: 28px;
+  height: 100%;
+}
+
+textarea.code-area {
+  width: 60%;
+  height: 6em;
+  font-size: 12px;
+  resize: none;
+}
+
+div.banner-credits {
+  font-size: 20px;
+  margin-top: 0.5em;
+  margin-left: 3em;
+}

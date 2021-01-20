@@ -1,0 +1,81 @@
+@font-face {
+  font-family: CaslonAntique;
+  src: url(/static/fonts/CaslonAntique.ttf);
+}
+
+@font-face {
+  font-family: DOMINICA;
+  src: url(/static/fonts/DOMINICA.ttf);
+}
+
+h2 {
+  font-size: 34px;
+  margin-top: 36px; /* font is kinda wonky, so adjust it to faction image */
+}
+
+html {
+  margin: 0;
+  height: 100vh;
+  font-family: CaslonAntique;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+a {
+  color: #002bffa1;
+  text-decoration: none;
+}
+
+/* --------------- Layout --------------- */
+.content-items-headers { height: 8%; }
+.content-items-contents { height: 92%; }
+.main-content-section { height: 82%; }
+
+
+/* --------------- Common styling --------------- */
+.flex { display: flex; }
+.row { flex-direction: row; }
+.column { flex-direction: column; }
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* --------------- Header Bar --------------- */
+.header-bar {
+  justify-content: center;
+  align-items: center;
+  height: 15%;
+  background: rgb(226, 214, 200);
+}
+.header-bar > h1 {
+  margin-top: 50px;
+  font-size: 50px;
+}
+.bannerman-img { height: 100%; }
+#bannerman-right { transform: scaleX(-1); }
+
+
+/* --------------- Message flashing --------------- */
+.message-bar { width: 70%; }
+.error { background-color: #ff434342; }
+.success { background-color: #a0ff435e; }
+.message-flash {
+  padding: 0.3em;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  font-size: 20px;
+}
+
+
+/* --------------- Footer --------------- */
+.footer {
+  height: 3%;
+  font-size: 18px;
+  background-color: rgba(226, 214, 200, 0.56)
+}

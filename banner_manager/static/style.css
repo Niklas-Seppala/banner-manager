@@ -10,7 +10,7 @@
 
 html {
   height: 100vh;
-  font-family: DOMINICA;
+  font-family: CaslonAntique;
 }
 
 h1, button {
@@ -148,7 +148,7 @@ h1 {
 }
 
 h2 {
-  font-size: 38px;
+  font-size: 42px;
   margin: 0;
 }
 

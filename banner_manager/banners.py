@@ -21,7 +21,8 @@ def banners():
     data = []
     for row in banners:
         data.append({'name': row['banner_name'], 'id': row['id'],
-                     'code': row['code'], 'faction': row['faction'], 'image': row['image_filename']})
+                     'code': row['code'], 'faction': row['faction'],
+                     'image': row['image_filename'], 'creator': row['creator']})
     return jsonify(data)
 
 
@@ -36,28 +37,30 @@ def add_banner():
         banner_name = request.form['banner-name']
         banner_code = request.form['banner-code']
         banner_faction = request.form['banner-faction']
-        banner_image_name = None
+        banner_creator = request.form['banner-creator']
 
-        if request.form['file-url']:
+        banner_image_name = None
+        if request.form['banner-file-url']:
             banner_image_name = download_from_url()
 
         if banner_image_name and banner_faction and banner_code and banner_name:
             db = get_db()
             db.execute(
-                'INSERT INTO banner (banner_name, code, image_filename, faction) '
-                'VALUES (?,?,?,?)', (banner_name, banner_code, banner_image_name, banner_faction))
+                'INSERT INTO banner (banner_name, code, image_filename, faction, creator) '
+                'VALUES (?,?,?,?,?)', (banner_name, banner_code, banner_image_name, banner_faction, banner_creator))
             db.commit()
             flash('Banner added.', category='success')
+
     return redirect(url_for('banners.index'))
 
 
 def download_from_url():
-    url = request.form['file-url']
+    url = request.form['banner-file-url']
     filename = urlparse(url).path.split('/')[-1]
 
     # check file for illegal filetypes
     if not allowed_file(filename):
-        flash('file not allowed.')
+        flash('File not allowed.', 'error')
         return None
 
     filename = secure_filename(filename)  # make sure filename is safe
